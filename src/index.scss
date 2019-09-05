@@ -1,0 +1,66 @@
+@import './scss/settings';
+
+html{
+    font-size: 10px;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow: hidden;
+    font-family: $font-family;
+    font-size: $font-size-navbar;
+    color: $font-color;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    font-family: $font-family;
+    color: $main-content-font-color;
+}
+
+footer, header {
+    height: 10vh;
+}
+
+#main-background {
+    display: block;
+    position: absolute;
+    width: $main-screen-width-desktop;
+    height: $main-background-height-desktop;
+    @include bg-setter($image-path, $bg-opacity);
+    z-index: -1;
+}
+
+#main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $main-content-height-desktop;
+    box-sizing: border-box;
+
+    #main-content-page {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: $main-content-page-height-desktop;
+        width: $main-screen-width-desktop;
+        box-sizing: border-box;
+        font-size: 2.2rem;
+    }
+}
+
+@import './views/navigation-menu/navigationMenu.scss';
+@import './views/footer/footer.scss';
+@import './views/home/home.scss';
+@import './views/about/about.scss';
+@import './views/skills/skills.scss';
+@import './views/projects/projects.scss';
+@import './views/contact/contact.scss';
+

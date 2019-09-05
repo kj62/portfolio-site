@@ -1,0 +1,8 @@
+section#projects-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include selected-animation($animation-std-time, option-slide-in);
+}
+
+@include option-slide-in-anim();

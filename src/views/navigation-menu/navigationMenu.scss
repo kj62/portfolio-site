@@ -1,0 +1,48 @@
+nav {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(to right, rgb(255, 225, 215), rgb(197, 121, 109));
+    height: 10vh;
+
+    ul.navigation-menu {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        list-style-type: none;
+        width: fit-content;
+
+        li.nav-menu-item {
+            width: 15rem;
+            height: fit-content;
+            text-align: center;
+            transition-duration: 1s;
+
+            &:hover {
+                transform: scale(1.25) rotate(-4deg);
+            }
+
+            &.logo-container {
+                display: flex;
+                justify-content: center;
+
+                &:hover {
+                    transform: scale(1.15);
+                }
+            }
+
+            a {
+                text-decoration: none;
+                color: #000;
+                text-shadow: 0px 3px 4px #555;
+
+                &.logo {
+                    width: 8rem;
+                    height: 7.2rem;
+                    background-image: url("../../assets/KJ_logo.png");
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+$font-color: #000;
+$font-family: Candara,"Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+$font-size-text: 1.2rem;
+$font-size-navbar: 2rem;
+$main-content-height-desktop: 80vh;
+$main-content-page-height-desktop: 70vh;
+$main-background-height-desktop: 80vh;
+$main-screen-width-desktop: 192rem;
+$main-content-font-color: #FFF;
+$image-path: "../assets/tennis.jpg";
+$bg-opacity: 0.7;
+$animation-std-time: 1500ms;
+
+@mixin bg-setter($img-path, $backgr-opacity) {
+    background-image: url($img-path), -webkit-linear-gradient(-180deg, #000000 0%, #1E1E1E 100%);
+    background-image: url($img-path), -moz-linear-gradient(-180deg, #000000 0%, #1E1E1E 100%);
+    background-image: url($img-path), linear-gradient(-180deg, #000000 0%, #1E1E1E 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    opacity: $backgr-opacity;
+}
+
+@mixin selected-animation($anim-duration, $anim-name) {
+    animation-duration: $anim-duration;
+    animation-name: $anim-name;
+}
+
+@mixin option-slide-in-anim() {
+    @keyframes option-slide-in {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "portfolio_v1",
+  "version": "1.0.0",
+  "description": "Portfolio #1",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "cleanEnv": "rimraf ./src/css/* ./src/dist/*",
+    "runGulp": "gulp",
+    "start": "npm-run-all cleanEnv runGulp"
+  },
+  "author": "Krzysztof Janosz",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-env": "^7.4.5",
+    "browser-sync": "^2.26.7",
+    "del": "^4.1.1",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-babel-minify": "^0.5.0",
+    "gulp-changed": "^3.2.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2",
+    "gulp-useref": "^3.1.6",
+    "imagemin": "^6.1.0",
+    "node": "^12.4.0",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^2.6.3",
+    "run-sequence": "^2.2.1"
+  },
+  "dependencies": {
+    "jquery": "^3.4.1"
+  }
+}

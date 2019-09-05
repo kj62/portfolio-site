@@ -1,0 +1,62 @@
+nav {
+    height: 10vh;
+
+    ul.footer-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        list-style-type: none;
+        width: fit-content;
+        margin-top: 0;
+
+        li.footer-item {
+            width: 250px;
+            height: fit-content;
+            text-align: center;
+
+            &.arrow-container {
+                display: flex;
+                justify-content: center;
+
+                &:hover {
+                    @include selected-animation($animation-std-time, arrow-footer-animation);
+                    animation-iteration-count: infinite;
+                }
+            }
+
+            a {
+                display: block;
+                text-decoration: none;
+                color: #000;
+                text-shadow: 0px 3px 4px #555;
+
+                &.footer-arrow {
+                    width: 8.8rem;
+                    height: 7rem;
+                    background-image: url("../../assets/arrow-up.png");
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+            }
+            p {
+                text-decoration: none;
+                color: #000;
+                text-shadow: 0px 3px 4px #555;
+                margin: 0;
+            }
+        }
+    }
+}
+
+@keyframes arrow-footer-animation {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-1rem);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

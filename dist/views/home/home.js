@@ -1,0 +1,1 @@
+$(document).ready(function(){$(".toggle-item").click(function(){$(".nice").hasClass("disable")?$(".unique").hasClass("disable")?!$(".simple").hasClass("disable")&&($(".simple").addClass("disable"),$(".nice").removeClass("disable")):($(".unique").addClass("disable"),$(".simple").removeClass("disable")):($(".nice").addClass("disable"),$(".unique").removeClass("disable"))})});

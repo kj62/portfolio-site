@@ -1,0 +1,68 @@
+section#contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include selected-animation($animation-std-time, option-slide-in);
+    
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        p.contact-header {
+            text-align: center;
+            font-style: oblique;
+            font-size: 3.6rem;
+            text-shadow: #c67b70 4px 3px 2px;
+            color: #000;
+            margin-top: 0;
+        }
+
+        p.contact-text {
+            text-align: center;
+            font-style: oblique;
+            font-size: 2.4rem;
+            text-shadow: #c67b70 4px 3px 2px;
+            text-align: center;
+            padding: 0 4rem;
+            margin-top: 0;
+        }
+    
+        .contact-icons-box {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 3rem;
+    
+            .contact-icon {
+                width: 4rem;
+                height: 4rem;
+    
+                &:nth-of-type(1) {
+                    background-image: url("../../assets/msg-icon.png");
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+        
+                &:nth-of-type(2) {
+                    background-image: url("../../assets/fb-icon.png");
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+        
+                &:nth-of-type(3) {
+                    background-image: url("../../assets/linkedin-icon.png");
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+        
+                &:nth-of-type(4) {
+                    background-image: url("../../assets/github-icon.png");
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+            }
+        }
+    }
+}
+
+@include option-slide-in-anim();
