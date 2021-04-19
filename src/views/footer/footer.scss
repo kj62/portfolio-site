@@ -1,7 +1,6 @@
 nav {
-    height: 10vh;
-
     &.nav-bottom {
+        height: 75px;
         box-shadow: 0 -5px 12px 2px #999999;
     }
 
@@ -13,9 +12,10 @@ nav {
         list-style-type: none;
         width: fit-content;
         margin-top: 0;
+        padding-left: 0;
 
         li.footer-item {
-            width: 250px;
+            width: fit-content;
             height: fit-content;
             text-align: center;
 

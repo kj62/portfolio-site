@@ -13,4 +13,12 @@ $(document).ready(function(){
             $(".nice").removeClass("disable");
         }
     });
+
+    $(".home-img").click(function() {
+        if (!$(this).hasClass("incognito-img")) {
+            $(this).addClass("incognito-img");
+        } else {
+            $(this).removeClass("incognito-img");
+        }
+    });
 });

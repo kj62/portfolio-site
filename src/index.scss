@@ -14,7 +14,7 @@ body {
     font-family: $font-family;
     font-size: $font-size-navbar;
     color: $font-color;
-    min-height: 100vh;
+    min-height: 100%;
 }
 
 *,
@@ -26,13 +26,14 @@ body {
 }
 
 footer, header {
-    height: 10vh;
+    height: 10%;
 }
 
 #main-background {
     display: block;
     position: absolute;
-    width: $main-screen-width-desktop;
+    width: 100%;
+    height: 100%;
     height: $main-background-height-desktop;
     @include bg-setter($image-path, $bg-opacity);
     z-index: -1;
@@ -44,17 +45,7 @@ footer, header {
     align-items: center;
     height: $main-content-height-desktop;
     box-sizing: border-box;
-
-    #main-content-page {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: $main-content-page-height-desktop;
-        width: $main-screen-width-desktop;
-        box-sizing: border-box;
-        font-size: 2.2rem;
-    }
+    font-size: 2.2rem;
 }
 
 @import './views/navigation-menu/navigationMenu.scss';

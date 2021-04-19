@@ -2,9 +2,9 @@ section#home-container {
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 120rem;
-    height: 60rem;
-    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    justify-content: space-evenly;
 
     @include selected-animation($animation-std-time, option-slide-in);
 
@@ -15,15 +15,22 @@ section#home-container {
 
         .home-img {
             display: flex;
-            background-image: url("../../assets/incognito.jpg");
+            background-image: url("../../assets/profile_4.png");
+            cursor: pointer;
             background-size: cover;
-            width: 44rem;
+            width: 32rem;
             height: 32rem;
             border-radius: 6px;
+            transition: all 0.25s ease-out;
 
             &:hover {
                 @include selected-animation($animation-std-time, home-img-animation);
                 animation-iteration-count: infinite;
+            }
+
+            &.incognito-img {
+                transition: all 0.25s ease-out;
+                background-image: url("../../assets/incognito.jpg");
             }
         }
 
@@ -33,7 +40,7 @@ section#home-container {
             font-size: 4rem;
             line-height: 8rem;
             color: #f1ebe5;
-            text-shadow: 0 10px 10px #000, 0 -2px 1px #fff;
+            text-shadow: 0 10px 10px #000, 0 -2px 1px #000;
             letter-spacing: 0.5rem;
         }
 
@@ -41,7 +48,7 @@ section#home-container {
             font-size: 3rem;
             line-height: 1rem;
             color: #f1ebe5;
-            text-shadow: 0 10px 10px #000;
+            text-shadow: 0 10px 10px #000, 0 -2px 1px #000;
             letter-spacing: 0.3rem;
         }
     }
@@ -63,7 +70,7 @@ section#home-container {
             letter-spacing: -2px;
 
             &.toggle-item {
-                text-shadow: 0 10px 10px #e69122, 0 -2px 1px #fff;
+                text-shadow: 0 10px 10px #000, 0 -2px 1px #fff;
                 border-bottom: dotted 6px #FFF;
 
                 &:hover {
@@ -115,5 +122,68 @@ section#home-container {
     }
     100% {
         transform: rotate(0);
+    }
+}
+
+@media screen and (max-width: 860px) {
+    section#home-container {
+        flex-direction: column;
+        overflow-y: auto;
+        padding-top: 400px;
+        padding-bottom: 60px;
+
+        .home-img-name-container {
+            margin-bottom: 60px;
+        }
+
+        .home-info span {
+            font-size: 6rem;
+            line-height: 5rem;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    section#home-container .home-img-name-container {
+        margin-top: -280px;
+ 
+        .home-name {
+            font-size: 3rem;
+            line-height: 3rem;
+            letter-spacing: 0;
+        }
+
+        .home-job {
+            font-size: 2rem;
+            line-height: 1rem;
+            letter-spacing: 0;
+        }
+    }
+
+    .home-img {
+        transform: scale(0.7);
+
+        &:hover {
+            animation: none;
+        }
+    }
+
+    section#home-container .home-info {
+        width: 16rem;
+
+        span {
+            font-size: 4rem;
+            line-height: 2rem;
+        }
+    }
+}
+
+@media screen and (max-width: 360px) {
+    section#home-container {
+        overflow-x: hidden;
+    }
+
+    nav ul.footer-menu li.footer-item p {
+        font-size: 1.5rem;
     }
 }
