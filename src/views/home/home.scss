@@ -33,7 +33,7 @@ section#home-container {
             font-size: 4rem;
             line-height: 8rem;
             color: #f1ebe5;
-            text-shadow: 0 10px 10px #ff5e00, 0 -2px 1px #fff;
+            text-shadow: 0 10px 10px #000, 0 -2px 1px #fff;
             letter-spacing: 0.5rem;
         }
 
@@ -41,7 +41,7 @@ section#home-container {
             font-size: 3rem;
             line-height: 1rem;
             color: #f1ebe5;
-            text-shadow: 0 10px 10px #ff5e00;
+            text-shadow: 0 10px 10px #000;
             letter-spacing: 0.3rem;
         }
     }
@@ -51,7 +51,7 @@ section#home-container {
         flex-direction: column;
         color: #202020;
         letter-spacing: -2px;
-        width: 25rem;
+        width: 32rem;
 
         span {
             display: flex;
@@ -59,11 +59,11 @@ section#home-container {
             font-size: 8rem;
             line-height: 8rem;
             color: #f1ebe5;
-            text-shadow: 0 10px 10px #ff5e00, 0 -2px 1px #fff;
+            text-shadow: 0 10px 10px #000, 0 -2px 1px #fff;
             letter-spacing: -2px;
 
             &.toggle-item {
-                text-shadow: 0 10px 10px #ff0000, 0 -2px 1px #fff;
+                text-shadow: 0 10px 10px #e69122, 0 -2px 1px #fff;
                 border-bottom: dotted 6px #FFF;
 
                 &:hover {

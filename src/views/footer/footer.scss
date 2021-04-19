@@ -1,6 +1,10 @@
 nav {
     height: 10vh;
 
+    &.nav-bottom {
+        box-shadow: 0 -5px 12px 2px #999999;
+    }
+
     ul.footer-menu {
         display: flex;
         flex-direction: column;
@@ -32,8 +36,8 @@ nav {
                 text-shadow: 0px 3px 4px #555;
 
                 &.footer-arrow {
-                    width: 8.8rem;
-                    height: 7rem;
+                    width: 7rem;
+                    height: 5.5rem;
                     background-image: url("../../assets/arrow-up.png");
                     background-repeat: no-repeat;
                     background-size: cover;
@@ -54,7 +58,7 @@ nav {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-1rem);
+        transform: translateY(-0.75rem);
     }
     100% {
         transform: translateY(0);

@@ -34,7 +34,7 @@ section#skills-container {
             text-align: center;
             font-style: oblique;
             font-size: 3.6rem;
-            text-shadow: #c67b70 4px 3px 2px;
+            text-shadow: #333333 1px 1px 2px;
             color: #000;
         }
     }
@@ -43,21 +43,10 @@ section#skills-container {
         display: flex;
         flex-direction: row;
         align-items: flex-start;
-        justify-content: space-evenly;
+        justify-content: center;
         height: 30vw;
 
         .job-skills-chart-container {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
-
-            * {
-                margin-bottom: 2rem;
-            }
-        }
-
-        .private-skills-chart-container {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;

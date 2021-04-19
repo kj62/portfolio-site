@@ -14,6 +14,7 @@ section#about-container {
             position: relative;
             width: 60rem;
             height: 30rem;
+            margin-left: 2rem;
             background-image: url("../../assets/dev.jpg");
             background-repeat: no-repeat;
             background-size: cover;
@@ -42,16 +43,15 @@ section#about-container {
                     text-align: center;
                     font-style: oblique;
                     font-size: 3.6rem;
-                    text-shadow: #c67b70 4px 3px 2px;
+                    text-shadow: #333333 1px 1px 2px;
                     color: #000;
                 }
                 p.about-details {
                     text-align: center;
-                    font-style: oblique;
                     font-size: 2.4rem;
-                    text-shadow: #c67b70 4px 3px 2px;
                     text-align: center;
                     padding: 0 4rem;
+                    text-shadow: #aaaaaa 1px 1px 1px;
                 }
             }
         }
@@ -70,8 +70,8 @@ section#about-container {
             align-items: center;
             margin-top: 3rem;
             line-height: 80px;
-            color: #f1ebe5;
-            text-shadow: 0 10px 10px #ff5e00;
+            color: #000;
+            text-shadow: #aaaaaa 1px 1px 1px;
 
             .job-desc {
                 font-size: 2.6rem;
@@ -82,7 +82,7 @@ section#about-container {
             }
 
             .job-desc, .hobby-desc, .family-desc {
-                width: 23rem;
+                width: 30rem;
                 text-align: center;
 
                 &:hover {

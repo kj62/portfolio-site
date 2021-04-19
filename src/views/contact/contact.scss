@@ -1,3 +1,15 @@
+@mixin icon-specific($url) {
+    background-image: url($url);
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: #333333 1px 1px 2px;
+
+    &:hover {
+        transform: translate(2px, 2px);
+        cursor: pointer
+    }
+}
+
 section#contact-container {
     display: flex;
     flex-direction: column;
@@ -13,16 +25,16 @@ section#contact-container {
             text-align: center;
             font-style: oblique;
             font-size: 3.6rem;
-            text-shadow: #c67b70 4px 3px 2px;
+            text-shadow: #333333 1px 1px 2px;
             color: #000;
             margin-top: 0;
         }
 
         p.contact-text {
             text-align: center;
-            font-style: oblique;
-            font-size: 2.4rem;
-            text-shadow: #c67b70 4px 3px 2px;
+            font-weight: 500;
+            font-size: 3rem;
+            text-shadow: #333333 1px 1px 2px;
             text-align: center;
             padding: 0 4rem;
             margin-top: 0;
@@ -38,27 +50,19 @@ section#contact-container {
                 height: 4rem;
     
                 &:nth-of-type(1) {
-                    background-image: url("../../assets/msg-icon.png");
-                    background-repeat: no-repeat;
-                    background-size: cover;
+                    @include icon-specific("../../assets/msg-icon.png");
                 }
         
                 &:nth-of-type(2) {
-                    background-image: url("../../assets/fb-icon.png");
-                    background-repeat: no-repeat;
-                    background-size: cover;
+                    @include icon-specific("../../assets/fb-icon.png");
                 }
         
                 &:nth-of-type(3) {
-                    background-image: url("../../assets/linkedin-icon.png");
-                    background-repeat: no-repeat;
-                    background-size: cover;
+                    @include icon-specific("../../assets/linkedin-icon.png");
                 }
         
                 &:nth-of-type(4) {
-                    background-image: url("../../assets/github-icon.png");
-                    background-repeat: no-repeat;
-                    background-size: cover;
+                    @include icon-specific("../../assets/github-icon.png");
                 }
             }
         }
