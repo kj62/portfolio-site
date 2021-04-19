@@ -22,18 +22,18 @@ section#about-container {
             @include selected-animation($animation-std-time, img-about-main-animation);
     
             &.front{
-                background-image: url("../../assets/front.jpg");
-                @include selected-animation($animation-std-time, img-about-desc-animation);
+                background-image: url("../../assets/dev.jpg");
+                @include selected-animation($animation-std-time, img-about-front-animation);
             }
     
             &.tennis-player{
                 background-image: url("../../assets/tennis_player.jpg");
-                @include selected-animation($animation-std-time, img-about-desc-animation)
+                @include selected-animation($animation-std-time, img-about-tennis-animation)
             }
     
             &.family{
                 background-image: url("../../assets/family.jpg");
-                @include selected-animation($animation-std-time, img-about-desc-animation);
+                @include selected-animation($animation-std-time, img-about-family-animation);
             }
         }
     
@@ -51,7 +51,7 @@ section#about-container {
                     font-size: 2.4rem;
                     text-align: center;
                     padding: 0 4rem;
-                    text-shadow: #aaaaaa 1px 1px 1px;
+                    text-shadow: #aaaaaa -1px 2px 1px;
                 }
             }
         }
@@ -71,10 +71,15 @@ section#about-container {
             margin-top: 3rem;
             line-height: 80px;
             color: #000;
-            text-shadow: #aaaaaa 1px 1px 1px;
+            font-weight: 600;
+            text-shadow: #f5f5f5 0px 1px 5px;
+
+            .active-txt {
+                text-shadow: #f2f450 0px 1px 5px;
+            }
 
             .job-desc {
-                font-size: 2.6rem;
+                font-size: 3rem;
             }
 
             .hobby-desc, .family-desc {
@@ -82,18 +87,37 @@ section#about-container {
             }
 
             .job-desc, .hobby-desc, .family-desc {
-                width: 30rem;
+                width: 32rem;
                 text-align: center;
-
-                &:hover {
-                    text-shadow: #f2f450 3px 1px 3px;
-                }
+                cursor: pointer;
             }
         }
     }
 }
 
-@keyframes img-about-desc-animation {
+@keyframes img-about-front-animation {
+    0% {
+        opacity: 0;
+        left: -15rem;
+    }
+    100% {
+        opacity: 1;
+        left: 0;
+    }
+}
+
+@keyframes img-about-tennis-animation {
+    0% {
+        opacity: 0;
+        left: -15rem;
+    }
+    100% {
+        opacity: 1;
+        left: 0;
+    }
+}
+
+@keyframes img-about-family-animation {
     0% {
         opacity: 0;
         left: -15rem;

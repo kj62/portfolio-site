@@ -89,7 +89,7 @@ section#home-container {
 @keyframes toggle-item-animation {
     0% {
         opacity: 0;
-        transform: skewX(-30deg) translateX(6rem);
+        transform: skewX(-30deg) translateX(-6rem);
     }
     100% {
         opacity: 1;
