@@ -1,3 +1,11 @@
+%img-setter {
+    width: 100%;
+    height: 160px;
+    background-size: cover;
+    box-shadow: 0 -5px 12px 2px #999999;
+    margin: 0 auto;
+}
+
 section#projects-container {
     display: flex;
     flex-direction: column;
@@ -13,7 +21,6 @@ section#projects-container {
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
-        margin-bottom: 2rem;
 
         p.projects-header {
             text-align: center;
@@ -21,6 +28,7 @@ section#projects-container {
             font-size: 3.6rem;
             text-shadow: #333333 1px 1px 2px;
             color: #000;
+            margin-bottom: 0;
         }
     }
 
@@ -30,8 +38,108 @@ section#projects-container {
         flex-direction: row;
         align-items: flex-start;
         justify-content: center;
+        width: 100%;
+
+        .projects-grid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+
+            &-row {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                width: 100%;
+
+                &-element {
+                    cursor: pointer;
+
+                    &:hover {
+                        transform: scale(1.1);
+                        transition: all 0.5s ease-out;
+                    }
+
+                    &-title {
+                        font-weight: 500;
+                        font-size: 2rem;
+                        text-shadow: #f5f5f5 0px 1px 5px;
+                        text-transform: uppercase;
+                        font-weight: 600;
+                        text-align: center;
+                    }
+                    &-content {
+                        display: flex;
+                        justify-content: center;
+
+                        &.tennis-site {
+                            background-image: url("../../assets/tennis_site.png");
+                            @extend %img-setter;
+                            width: 77%;
+                        }
+                        &.js-quiz {
+                            background-image: url("../../assets/js_quiz.png");
+                            @extend %img-setter;
+                        }
+                        &.gulp-runner {
+                            background-image: url("../../assets/gulp.png");
+                            @extend %img-setter;
+                        }
+                        &.clarity-validator {
+                            background-image: url("../../assets/clarity.png");
+                            @extend %img-setter;
+                        }
+                    }
+                }
+            }
+
+        }
     }
-    
+
+}
+
+@media screen and (max-width: 860px) {
+    section#projects-container .projects-main-container .projects-grid {
+        padding-bottom: 5rem;
+        padding-left: 4rem;
+        padding-right: 4rem;
+
+        &-row {
+            flex-direction: column;
+            justify-content: space-evenly;
+            width: auto;
+
+            &-element {
+                transform: scale(0.9);
+
+                &-content.js-quiz {
+                    height: 170px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 420px) {
+    section#projects-container .projects-main-container .projects-grid-row-element-content {
+        &.gulp-runner {
+            height: 110px;
+            background-size: cover;
+        }
+        &.tennis-site {
+            height: 110px;
+            background-size: cover;
+        }
+        &.js-quiz {
+            height: 110px;
+            background-size: cover;
+        }
+        &.clarity-validator {
+            height: 110px;
+            background-size: cover;
+        }
+    }
 }
 
 @include option-slide-in-anim();

@@ -9,10 +9,10 @@ $(document).ready(function(){
     const ctxGit = document.getElementById("git-skills-chart").getContext('2d');
 
     jobSkillsChartHandler(ctxCss, 80, "CSS & Sass");
-    jobSkillsChartHandler(ctxJs, 70, "JavaScript & jQuery");
+    jobSkillsChartHandler(ctxJs, 65, "JavaScript & jQuery");
     jobSkillsChartHandler(ctxHtml, 70, "HTML");
     jobSkillsChartHandler(ctxAngular, 75, "Angular + UI libs");
-    jobSkillsChartHandler(ctxVue, 50, "VueJS");
+    jobSkillsChartHandler(ctxVue, 55, "VueJS");
     jobSkillsChartHandler(ctxUIRWD, 75, "UI and RWD");
     jobSkillsChartHandler(ctxGulpNpm, 70, "Gulp & npm");
     jobSkillsChartHandler(ctxGit, 90, "Git (TortoiseGit)");

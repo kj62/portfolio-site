@@ -84,7 +84,8 @@ nav {
             text-transform: uppercase;
             padding: 1rem 0;
             font-weight: 500;
-            text-decoration: none; }
+            text-decoration: none;
+            text-shadow: #f5f5f5 3px 3px 5px; }
             nav.nav-top .menu-dropdown-list-element a:hover {
               color: #e28000; }
     nav.nav-top .field-transparent {
@@ -574,6 +575,13 @@ section#skills-container {
   canvas {
     transform: scale(0.8); } }
 
+section#projects-container .projects-main-container .projects-grid-row-element-content.tennis-site, section#projects-container .projects-main-container .projects-grid-row-element-content.js-quiz, section#projects-container .projects-main-container .projects-grid-row-element-content.gulp-runner, section#projects-container .projects-main-container .projects-grid-row-element-content.clarity-validator {
+  width: 100%;
+  height: 160px;
+  background-size: cover;
+  box-shadow: 0 -5px 12px 2px #999999;
+  margin: 0 auto; }
+
 section#projects-container {
   display: flex;
   flex-direction: column;
@@ -588,20 +596,84 @@ section#projects-container {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    align-items: center;
-    margin-bottom: 2rem; }
+    align-items: center; }
     section#projects-container .projects-info p.projects-header {
       text-align: center;
       font-style: oblique;
       font-size: 3.6rem;
       text-shadow: #333333 1px 1px 2px;
-      color: #000; }
+      color: #000;
+      margin-bottom: 0; }
   section#projects-container .projects-main-container {
     position: relative;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    justify-content: center; }
+    justify-content: center;
+    width: 100%; }
+    section#projects-container .projects-main-container .projects-grid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%; }
+      section#projects-container .projects-main-container .projects-grid-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%; }
+        section#projects-container .projects-main-container .projects-grid-row-element {
+          cursor: pointer; }
+          section#projects-container .projects-main-container .projects-grid-row-element:hover {
+            transform: scale(1.1);
+            transition: all 0.5s ease-out; }
+          section#projects-container .projects-main-container .projects-grid-row-element-title {
+            font-weight: 500;
+            font-size: 2rem;
+            text-shadow: #f5f5f5 0px 1px 5px;
+            text-transform: uppercase;
+            font-weight: 600;
+            text-align: center; }
+          section#projects-container .projects-main-container .projects-grid-row-element-content {
+            display: flex;
+            justify-content: center; }
+            section#projects-container .projects-main-container .projects-grid-row-element-content.tennis-site {
+              background-image: url("../../assets/tennis_site.png");
+              width: 77%; }
+            section#projects-container .projects-main-container .projects-grid-row-element-content.js-quiz {
+              background-image: url("../../assets/js_quiz.png"); }
+            section#projects-container .projects-main-container .projects-grid-row-element-content.gulp-runner {
+              background-image: url("../../assets/gulp.png"); }
+            section#projects-container .projects-main-container .projects-grid-row-element-content.clarity-validator {
+              background-image: url("../../assets/clarity.png"); }
+
+@media screen and (max-width: 860px) {
+  section#projects-container .projects-main-container .projects-grid {
+    padding-bottom: 5rem;
+    padding-left: 4rem;
+    padding-right: 4rem; }
+    section#projects-container .projects-main-container .projects-grid-row {
+      flex-direction: column;
+      justify-content: space-evenly;
+      width: auto; }
+      section#projects-container .projects-main-container .projects-grid-row-element {
+        transform: scale(0.9); }
+        section#projects-container .projects-main-container .projects-grid-row-element-content.js-quiz {
+          height: 170px; } }
+
+@media screen and (max-width: 420px) {
+  section#projects-container .projects-main-container .projects-grid-row-element-content.gulp-runner {
+    height: 110px;
+    background-size: cover; }
+  section#projects-container .projects-main-container .projects-grid-row-element-content.tennis-site {
+    height: 110px;
+    background-size: cover; }
+  section#projects-container .projects-main-container .projects-grid-row-element-content.js-quiz {
+    height: 110px;
+    background-size: cover; }
+  section#projects-container .projects-main-container .projects-grid-row-element-content.clarity-validator {
+    height: 110px;
+    background-size: cover; } }
 
 @keyframes option-slide-in {
   0% {
