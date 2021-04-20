@@ -54,6 +54,53 @@ nav {
     position: fixed;
     width: 100%;
     height: 75px; }
+    nav.nav-top .menu-dropdown {
+      display: flex;
+      visibility: hidden;
+      position: absolute;
+      top: 75px;
+      left: 0;
+      width: 180px;
+      height: calc(100vh - 150px);
+      border-radius: 5px;
+      box-shadow: 0 5px 12px 2px #999999;
+      background: linear-gradient(to right, #e2e2e2, #999999);
+      transform: translate(-200px);
+      transition: all 0.5s ease-out; }
+      nav.nav-top .menu-dropdown.show {
+        visibility: visible;
+        transform: translate(0);
+        transition: all 0.5s ease-out; }
+      nav.nav-top .menu-dropdown-list {
+        list-style-type: none; }
+        nav.nav-top .menu-dropdown-list-element {
+          margin-bottom: 2rem; }
+          nav.nav-top .menu-dropdown-list-element:last-child {
+            margin-bottom: 0; }
+          nav.nav-top .menu-dropdown-list-element a {
+            display: inline-block;
+            position: relative;
+            font-size: 2rem;
+            text-transform: uppercase;
+            padding: 1rem 0;
+            font-weight: 500;
+            text-decoration: none; }
+            nav.nav-top .menu-dropdown-list-element a:hover {
+              color: #e28000; }
+    nav.nav-top .field-transparent {
+      display: block;
+      position: absolute;
+      top: 75px;
+      left: 180px;
+      transform: translate(calc(100vw - 180px));
+      transition: all 0.5s ease-out;
+      height: calc(100vh - 150px);
+      width: calc(100vw - 180px);
+      background-color: #000;
+      opacity: 0.6; }
+      nav.nav-top .field-transparent.show {
+        transform: translate(0);
+        transition: all 0.5s ease-out; }
   nav .menu-btn {
     display: none; }
   nav ul.navigation-menu {
@@ -211,7 +258,8 @@ section#home-container {
         animation-iteration-count: infinite; }
       section#home-container .home-img-name-container .home-img.incognito-img {
         transition: all 0.25s ease-out;
-        background-image: url("../../assets/incognito.jpg"); }
+        background-image: url("../../assets/incognito_img.jpg");
+        background-position-x: center; }
     section#home-container .home-img-name-container .home-name {
       display: flex;
       margin: 10px 0 20px 0;
@@ -324,6 +372,10 @@ section#about-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: auto;
+  height: calc(100vh - 75px);
+  padding-top: 75px;
+  overflow: hidden;
   animation-duration: 1500ms;
   animation-name: option-slide-in; }
   section#about-container .about-info {
@@ -331,7 +383,7 @@ section#about-container {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center; }
-    section#about-container .about-info .about-img {
+    section#about-container .about-info .about-img, section#about-container .about-info .mobile-about-img {
       position: relative;
       width: 60rem;
       height: 30rem;
@@ -343,18 +395,20 @@ section#about-container {
       border: 2px solid #000;
       animation-duration: 1500ms;
       animation-name: img-about-main-animation; }
-      section#about-container .about-info .about-img.front {
+      section#about-container .about-info .about-img.front, section#about-container .about-info .mobile-about-img.front {
         background-image: url("../../assets/dev.jpg");
         animation-duration: 1500ms;
         animation-name: img-about-front-animation; }
-      section#about-container .about-info .about-img.tennis-player {
+      section#about-container .about-info .about-img.tennis-player, section#about-container .about-info .mobile-about-img.tennis-player {
         background-image: url("../../assets/tennis_player.jpg");
         animation-duration: 1500ms;
         animation-name: img-about-tennis-animation; }
-      section#about-container .about-info .about-img.family {
+      section#about-container .about-info .about-img.family, section#about-container .about-info .mobile-about-img.family {
         background-image: url("../../assets/family.jpg");
         animation-duration: 1500ms;
         animation-name: img-about-family-animation; }
+    section#about-container .about-info .mobile-about-img {
+      display: none; }
     section#about-container .about-info .about-note .details-container p.about-details-header {
       text-align: center;
       font-style: oblique;
@@ -432,11 +486,40 @@ section#about-container {
   100% {
     opacity: 1; } }
 
+@media screen and (max-width: 1280px) {
+  section#about-container .about-info .about-note .details-container p.about-details {
+    font-size: 2rem; } }
+
+@media screen and (max-width: 1000px) {
+  section#about-container {
+    overflow-x: hidden;
+    overflow-y: auto; }
+    section#about-container .about-info {
+      flex-direction: column; }
+      section#about-container .about-info .about-img {
+        display: none; }
+      section#about-container .about-info .mobile-about-img {
+        display: block;
+        width: 70%;
+        height: 20rem;
+        cursor: pointer; }
+        section#about-container .about-info .mobile-about-img.toggle-img {
+          background-image: url("../../assets/tennisFamily.jpg"); }
+  section#about-container .about-selection {
+    display: none; }
+  section#about-container .about-info .about-note .details-container p.about-details {
+    color: #FFF; }
+  section#about-container .about-info .about-note .details-container p.about-details-header {
+    margin-top: 10px;
+    margin-bottom: 10px; } }
+
 section#skills-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   overflow: auto;
+  height: calc(100vh - 75px);
+  padding-top: 75px;
   animation-duration: 1500ms;
   animation-name: option-slide-in; }
   section#skills-container::-webkit-scrollbar-track {
@@ -468,8 +551,7 @@ section#skills-container {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    justify-content: center;
-    height: 30vw; }
+    justify-content: center; }
     section#skills-container .skills-charts-container .job-skills-chart-container {
       display: flex;
       flex-direction: row;
@@ -484,12 +566,42 @@ section#skills-container {
   100% {
     opacity: 1; } }
 
+@media screen and (max-width: 480px) {
+  section#skills-container {
+    overflow-x: hidden; }
+    section#skills-container .skills-info p.skills-header {
+      font-size: 3rem; }
+  canvas {
+    transform: scale(0.8); } }
+
 section#projects-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: auto;
+  height: calc(100vh - 75px);
+  width: 100%;
+  padding-top: 75px;
   animation-duration: 1500ms;
   animation-name: option-slide-in; }
+  section#projects-container .projects-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 2rem; }
+    section#projects-container .projects-info p.projects-header {
+      text-align: center;
+      font-style: oblique;
+      font-size: 3.6rem;
+      text-shadow: #333333 1px 1px 2px;
+      color: #000; }
+  section#projects-container .projects-main-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center; }
 
 @keyframes option-slide-in {
   0% {
@@ -527,39 +639,39 @@ section#contact-container {
       display: flex;
       justify-content: space-evenly;
       margin-top: 3rem; }
-      section#contact-container .contact-info .contact-icons-box .contact-icon {
+      section#contact-container .contact-info .contact-icons-box a .contact-icon {
         width: 4rem;
         height: 4rem; }
-        section#contact-container .contact-info .contact-icons-box .contact-icon:nth-of-type(1) {
+        section#contact-container .contact-info .contact-icons-box a .contact-icon.msg {
           background-image: url("../../assets/msg-icon.png");
           background-repeat: no-repeat;
           background-size: cover;
           box-shadow: #333333 1px 1px 2px; }
-          section#contact-container .contact-info .contact-icons-box .contact-icon:nth-of-type(1):hover {
+          section#contact-container .contact-info .contact-icons-box a .contact-icon.msg:hover {
             transform: translate(2px, 2px);
             cursor: pointer; }
-        section#contact-container .contact-info .contact-icons-box .contact-icon:nth-of-type(2) {
+        section#contact-container .contact-info .contact-icons-box a .contact-icon.fb {
           background-image: url("../../assets/fb-icon.png");
           background-repeat: no-repeat;
           background-size: cover;
           box-shadow: #333333 1px 1px 2px; }
-          section#contact-container .contact-info .contact-icons-box .contact-icon:nth-of-type(2):hover {
+          section#contact-container .contact-info .contact-icons-box a .contact-icon.fb:hover {
             transform: translate(2px, 2px);
             cursor: pointer; }
-        section#contact-container .contact-info .contact-icons-box .contact-icon:nth-of-type(3) {
+        section#contact-container .contact-info .contact-icons-box a .contact-icon.linkedin {
           background-image: url("../../assets/linkedin-icon.png");
           background-repeat: no-repeat;
           background-size: cover;
           box-shadow: #333333 1px 1px 2px; }
-          section#contact-container .contact-info .contact-icons-box .contact-icon:nth-of-type(3):hover {
+          section#contact-container .contact-info .contact-icons-box a .contact-icon.linkedin:hover {
             transform: translate(2px, 2px);
             cursor: pointer; }
-        section#contact-container .contact-info .contact-icons-box .contact-icon:nth-of-type(4) {
+        section#contact-container .contact-info .contact-icons-box a .contact-icon.gh {
           background-image: url("../../assets/github-icon.png");
           background-repeat: no-repeat;
           background-size: cover;
           box-shadow: #333333 1px 1px 2px; }
-          section#contact-container .contact-info .contact-icons-box .contact-icon:nth-of-type(4):hover {
+          section#contact-container .contact-info .contact-icons-box a .contact-icon.gh:hover {
             transform: translate(2px, 2px);
             cursor: pointer; }
 
@@ -568,3 +680,7 @@ section#contact-container {
     opacity: 0; }
   100% {
     opacity: 1; } }
+
+@media screen and (max-width: 480px) {
+  section#contact-container .contact-info p.contact-text {
+    font-size: 2rem; } }

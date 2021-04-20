@@ -2,6 +2,10 @@ section#about-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: auto;
+    height: calc(100vh - 75px);
+    padding-top: 75px;
+    overflow: hidden;
     @include selected-animation($animation-std-time, option-slide-in);
 
     .about-info {
@@ -10,7 +14,7 @@ section#about-container {
         justify-content: space-evenly;
         align-items: center;
 
-        .about-img {
+        .about-img, .mobile-about-img {
             position: relative;
             width: 60rem;
             height: 30rem;
@@ -37,7 +41,11 @@ section#about-container {
                 @include selected-animation($animation-std-time, img-about-family-animation);
             }
         }
-    
+
+        .mobile-about-img {
+            display: none;
+        }
+
         .about-note {
             .details-container {
                 p.about-details-header {
@@ -144,3 +152,48 @@ section#about-container {
 }
 
 @include option-slide-in-anim();
+
+@media screen and (max-width: 1280px) {
+    section#about-container .about-info .about-note .details-container p.about-details {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    section#about-container {
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        .about-info {
+            flex-direction: column;
+    
+            .about-img {
+                display: none;
+            }
+    
+            .mobile-about-img {
+                display: block;
+                width: 70%;
+                height: 20rem;
+                cursor: pointer;
+
+                &.toggle-img {
+                    background-image: url("../../assets/tennisFamily.jpg");
+                }
+            }
+        }
+    }
+
+    section#about-container .about-selection {
+        display: none;
+    }
+
+    section#about-container .about-info .about-note .details-container p.about-details {
+        color: #FFF;
+    }
+
+    section#about-container .about-info .about-note .details-container p.about-details-header {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}

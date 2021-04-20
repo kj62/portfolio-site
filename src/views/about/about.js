@@ -25,4 +25,14 @@ $(document).ready(function(){
             $("p.family-desc").addClass("active-txt");
         }
     });
+
+    $(".mobile-about-img").click(
+        function() {
+            if ($(this).hasClass("toggle-img")) {
+                $(this).removeClass("toggle-img");
+            } else {
+                $(this).addClass("toggle-img");
+            }
+        }
+    );
 });

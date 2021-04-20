@@ -46,24 +46,26 @@ section#contact-container {
             justify-content: space-evenly;
             margin-top: 3rem;
     
-            .contact-icon {
-                width: 4rem;
-                height: 4rem;
-    
-                &:nth-of-type(1) {
-                    @include icon-specific("../../assets/msg-icon.png");
-                }
+            a {
+                .contact-icon {
+                    width: 4rem;
+                    height: 4rem;
         
-                &:nth-of-type(2) {
-                    @include icon-specific("../../assets/fb-icon.png");
-                }
-        
-                &:nth-of-type(3) {
-                    @include icon-specific("../../assets/linkedin-icon.png");
-                }
-        
-                &:nth-of-type(4) {
-                    @include icon-specific("../../assets/github-icon.png");
+                    &.msg {
+                        @include icon-specific("../../assets/msg-icon.png");
+                    }
+            
+                    &.fb {
+                        @include icon-specific("../../assets/fb-icon.png");
+                    }
+            
+                    &.linkedin {
+                        @include icon-specific("../../assets/linkedin-icon.png");
+                    }
+            
+                    &.gh {
+                        @include icon-specific("../../assets/github-icon.png");
+                    }
                 }
             }
         }
@@ -71,3 +73,9 @@ section#contact-container {
 }
 
 @include option-slide-in-anim();
+
+@media screen and (max-width: 480px) {
+    section#contact-container .contact-info p.contact-text {
+        font-size: 2rem;
+    }
+}

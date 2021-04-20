@@ -30,7 +30,8 @@ section#home-container {
 
             &.incognito-img {
                 transition: all 0.25s ease-out;
-                background-image: url("../../assets/incognito.jpg");
+                background-image: url("../../assets/incognito_img.jpg");
+                background-position-x: center;
             }
         }
 
