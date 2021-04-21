@@ -12,7 +12,7 @@ $(document).ready(function(){
     jobSkillsChartHandler(ctxJs, 65, "JavaScript & jQuery");
     jobSkillsChartHandler(ctxHtml, 70, "HTML");
     jobSkillsChartHandler(ctxAngular, 75, "Angular + UI libs");
-    jobSkillsChartHandler(ctxVue, 55, "VueJS");
+    jobSkillsChartHandler(ctxVue, 45, "VueJS");
     jobSkillsChartHandler(ctxUIRWD, 75, "UI and RWD");
     jobSkillsChartHandler(ctxGulpNpm, 70, "Gulp & npm");
     jobSkillsChartHandler(ctxGit, 90, "Git (TortoiseGit)");
